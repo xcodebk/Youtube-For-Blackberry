@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.searchIndex{
+  text-align: center;
+  padding-top:60px;
 }
-
-a {
-  color: #00B7FF;
+.footer{
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+}
+.footer span{
+  font-size: 20px;
 }
