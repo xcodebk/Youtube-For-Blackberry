@@ -1,8 +1,21 @@
+<div class="u-full-width searchResult">
   <form action="/search" method="GET">
-<input type="text" name="question">
-<button type="submit">Search</button>
-</form>
-  {{#each items}}
-    
-    <a href="{{this.url}}"><img src="{{this.imageUrl}}" alt=""><br>Video {{this.title}}</a><br>
+    <input type="text" name="question">
+    <button type="submit">Search</button>
+  </form>
+</div>
+<div class="u-full-width" style="padding: 10px">
+   {{#each rows}}
+  <div class="row">
+   {{#each this}}
+    <div class="four columns">
+      <a href="{{this.url}}"><img style="width: 100%" src="{{this.imageUrl}}" alt="">Video {{this.title}}</a><br>
+    </div>
+    {{/each}}
+  </div>
   {{/each}}
+</div>
+
+<div class="u-full-width footer">
+  <span>&copy; 2017 xcode.bk@gmail.com</span>
+</div>

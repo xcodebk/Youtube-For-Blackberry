@@ -35,8 +35,12 @@ router.get('/', function(req, res, next) {
         value.forEach(function(element,idx) {
           items.push({imageUrl:data.items[idx].snippet.thumbnails.high.url,url:element.url,title:data.items[idx].snippet.title});
         },this);
+        var rows = [], size = 3;
+
+while (items.length > 0)
+    rows.push(items.splice(0, size));
         //res.send(data);
-        res.render("searchResult",{items:items});
+        res.render("searchResult",{rows:rows});
        //res.send(listlink);
       })
       
