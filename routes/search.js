@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
       Promise.all(listP).then(value=>{
         var items=[];
         value.forEach(function(element,idx) {
-          items.push({imageUrl:data.items[idx].snippet.thumbnails.high.url,url:element.url,title:data.items[idx].snippet.title});
+          items.push({imageUrl:data.items[idx].snippet.thumbnails.medium.url,url:element.url,title:data.items[idx].snippet.title});
         },this);
         var rows = [], size = 3;
 
