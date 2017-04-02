@@ -4,11 +4,11 @@
     <button type="submit">Search</button>
   </form>
 </div>
-<div class="u-full-width">
+<div class="u-max-full-width">
    {{#each rows}}
   <div class="row">
    {{#each this}}
-    <div class="four columns" style="margin:20px">
+    <div class="four columns" style="padding:10px">
       <a href="{{this.url}}" style="display:block;text-align: center"><img style="width: 100%" src="{{this.imageUrl}}" alt="">Video {{this.title}}</a><br>
     </div>
     {{/each}}
