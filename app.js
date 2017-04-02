@@ -30,7 +30,7 @@ app.use('/', function (req, res, next) {
 
   youtube.search.list({
     part: 'snippet',
-    q: 'alan walker',
+    q: 'loi xin loi cua mot dan choi remix',
     //location:(10.762622,106.660172),
     maxResults:10,
     key: API_KEY
