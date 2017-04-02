@@ -30,7 +30,7 @@ app.use('/', function (req, res, next) {
 
   youtube.search.list({
     part: 'snippet',
-    q: 'loi xin loi cua mot dan choi remix',
+    q: 'tomorowland',
     maxResults:20,
     key: API_KEY
   }, function (err, data) {
@@ -50,7 +50,7 @@ app.use('/', function (req, res, next) {
       Promise.all(listP).then(value=>{
         var items=[];
         value.forEach(function(element,idx) {
-          items.push({imageUrl:data.items[idx].snippet.thumbnails.default.url,url:element.url,title:data.items[idx].snippet.title});
+          items.push({imageUrl:data.items[idx].snippet.thumbnails.high.url,url:element.url,title:data.items[idx].snippet.title});
         },this);
         //res.send(data);
         res.render("index",{items:items});
