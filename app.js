@@ -31,15 +31,13 @@ app.use('/', function (req, res, next) {
   youtube.search.list({
     part: 'snippet',
     q: 'loi xin loi cua mot dan choi remix',
-    //location:(10.762622,106.660172),
-    maxResults:10,
+    maxResults:20,
     key: API_KEY
   }, function (err, data) {
     if (err) {
       res.send(err);
     }
     if (data) {
-      var linkList = [];
       var listP=[];
       data.items.forEach(function(element) {
         var options={
@@ -50,11 +48,11 @@ app.use('/', function (req, res, next) {
         listP.push(rp(options));
       })
       Promise.all(listP).then(value=>{
-        listlink=[];
-        value.forEach(function(element) {
-          listlink.push(element.url);
+        var items=[];
+        value.forEach(function(element,idx) {
+          items.push({url:element.url,title:data.items[idx].snippet.title});
         },this);
-        res.render("index",{items:listlink});
+        res.render("index",{items:items});
        //res.send(listlink);
       })
       
