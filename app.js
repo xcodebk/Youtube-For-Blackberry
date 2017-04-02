@@ -30,7 +30,7 @@ app.use('/', function (req, res, next) {
 
   youtube.search.list({
     part: 'snippet',
-    q: 'hai truong giang',
+    q: 'lac troi',
     maxResults:20,
     key: API_KEY
   }, function (err, data) {
